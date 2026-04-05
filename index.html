@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>看護師リーチ｜あなた専属の転職パートナー</title>
+<meta name="description" content="看護師専門の転職支援サービス。非公開求人多数、完全個別対応、相談無料。LINEで気軽にご相談ください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+<style>
+/* ========== Reset & Base ========== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #F9A8C9;
+  --color-primary-dark: #E87FAF;
+  --color-accent: #FF6B9D;
+  --color-white: #FFFFFF;
+  --color-bg: #FFF5F8;
+  --color-text: #333333;
+  --color-text-light: #777777;
+  --color-line: #06C755;
+  --font-base: 'Noto Sans JP', sans-serif;
+  --font-heading: 'Noto Serif JP', serif;
+  --max-width: 480px;
+  --section-padding: 60px 20px;
+  --border-radius: 12px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--color-text);
+  line-height: 1.8;
+  font-size: 16px;
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========== Utility ========== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== 1. Header ========== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+  padding: 12px 0;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-line);
+  color: var(--color-white);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 50px;
+  transition: opacity 0.3s;
+}
+
+.header-cta:hover {
+  opacity: 0.85;
+}
+
+.line-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ========== 2. Hero ========== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #FFF5F8 0%, #F9A8C9 50%, #E87FAF 100%);
+  padding: 100px 20px 60px;
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+}
+
+.hero-catch {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--color-white);
+  margin-bottom: 8px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.hero-catch-sub {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-white);
+  margin-bottom: 20px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.hero-sub {
+  font-size: 0.9rem;
+  color: var(--color-white);
+  margin-bottom: 32px;
+  opacity: 0.95;
+  letter-spacing: 0.05em;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--color-line);
+  color: var(--color-white);
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(6, 199, 85, 0.35);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(6, 199, 85, 0.45);
+}
+
+.cta-button .line-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* ========== 3. Problems ========== */
+.problems {
+  background: var(--color-white);
+  padding: var(--section-padding);
+}
+
+.problems-list {
+  list-style: none;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.problems-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  font-size: 0.95rem;
+  border-bottom: 1px dashed #eee;
+}
+
+.problems-list li:last-child {
+  border-bottom: none;
+}
+
+.check-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+/* ========== 4. Service (Reasons) ========== */
+.service {
+  background: var(--color-bg);
+  padding: var(--section-padding);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-primary-dark);
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+/* ========== 5. Trust (Results) ========== */
+.trust {
+  background: var(--color-white);
+  padding: var(--section-padding);
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  max-width: var(--max-width);
+  margin: 0 auto 36px;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+  background: var(--color-bg);
+  border-radius: var(--border-radius);
+  padding: 20px 8px;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--color-primary-dark);
+  display: block;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  margin-top: 4px;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.testimonial {
+  background: var(--color-bg);
+  border-radius: var(--border-radius);
+  padding: 24px;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.testimonial-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.testimonial-stars {
+  color: #FFB800;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.testimonial-text {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+/* ========== 6. Flow ========== */
+.flow {
+  background: var(--color-bg);
+  padding: var(--section-padding);
+}
+
+.steps {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 0;
+  position: relative;
+}
+
+.step-indicator {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.step-line {
+  width: 2px;
+  height: 100%;
+  min-height: 20px;
+  background: var(--color-primary);
+  margin-top: 8px;
+}
+
+.step:last-child .step-line {
+  display: none;
+}
+
+.step-content {
+  padding-top: 12px;
+}
+
+.step-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* ========== 7. CTA Section ========== */
+.cta-section {
+  background: linear-gradient(135deg, #F9A8C9 0%, #E87FAF 100%);
+  padding: var(--section-padding);
+  text-align: center;
+}
+
+.cta-section .section-title {
+  color: var(--color-white);
+}
+
+.cta-sub {
+  color: var(--color-white);
+  font-size: 0.9rem;
+  margin-bottom: 28px;
+  opacity: 0.95;
+}
+
+.cta-note {
+  color: var(--color-white);
+  font-size: 0.75rem;
+  margin-top: 16px;
+  opacity: 0.8;
+}
+
+/* ========== 8. FAQ ========== */
+.faq {
+  background: var(--color-white);
+  padding: var(--section-padding);
+}
+
+.faq-list {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  border: 1px solid #eee;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: var(--color-bg);
+  border: none;
+  padding: 16px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: var(--font-base);
+  color: var(--color-text);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: background 0.2s;
+}
+
+.faq-question:hover {
+  background: #FFECF1;
+}
+
+.faq-question::after {
+  content: '+';
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--color-primary-dark);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.faq-item.open .faq-question::after {
+  content: '−';
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer-inner {
+  padding: 16px 20px;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.8;
+}
+
+/* ========== 9. Footer ========== */
+.footer {
+  background: #4A4A4A;
+  color: var(--color-white);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+/* ========== Fixed Bottom CTA (Mobile) ========== */
+.fixed-bottom-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  padding: 12px 20px;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+}
+
+.fixed-bottom-cta .cta-button {
+  width: 100%;
+  max-width: var(--max-width);
+  font-size: 1rem;
+  padding: 14px 24px;
+}
+
+/* ========== Desktop adjustment ========== */
+@media (min-width: 481px) {
+  .fixed-bottom-cta {
+    display: none;
+  }
+}
+
+/* ========== LINE SVG Inline ========== */
+.line-svg {
+  fill: currentColor;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 1. Header ===== -->
+<header class="header">
+  <div class="container">
+    <div class="header-logo">看護師リーチ</div>
+    <a href="#" class="header-cta" id="header-line-btn">
+      <svg class="line-icon line-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386a.63.63 0 0 1-.63-.629V8.108a.63.63 0 0 1 .63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 0 1-.63.63.625.625 0 0 1-.51-.262l-2.397-3.274v2.906a.63.63 0 0 1-.63.63.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 .63-.63c.2 0 .385.096.504.259l2.403 3.274V8.108a.63.63 0 0 1 1.26 0v4.771zm-5.741 0a.63.63 0 0 1-1.26 0V8.108a.63.63 0 0 1 1.26 0v4.771zm-2.451.63H4.932a.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 1.26 0v4.141h1.752c.348 0 .63.283.63.63 0 .344-.282.63-.63.63zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.921.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      LINE相談
+    </a>
+  </div>
+</header>
+
+<!-- ===== 2. Hero ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-catch">給料・人間関係に悩む<br>看護師さんへ</h1>
+    <p class="hero-catch-sub">あなた専属の転職パートナーが、<br>理想の職場を一緒に探します</p>
+    <p class="hero-sub">非公開求人多数｜完全個別対応｜相談無料</p>
+    <a href="#" class="cta-button" id="hero-line-btn">
+      <svg class="line-icon line-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386a.63.63 0 0 1-.63-.629V8.108a.63.63 0 0 1 .63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 0 1-.63.63.625.625 0 0 1-.51-.262l-2.397-3.274v2.906a.63.63 0 0 1-.63.63.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 .63-.63c.2 0 .385.096.504.259l2.403 3.274V8.108a.63.63 0 0 1 1.26 0v4.771zm-5.741 0a.63.63 0 0 1-1.26 0V8.108a.63.63 0 0 1 1.26 0v4.771zm-2.451.63H4.932a.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 1.26 0v4.141h1.752c.348 0 .63.283.63.63 0 .344-.282.63-.63.63zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.921.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      LINEで無料相談する
+    </a>
+  </div>
+</section>
+
+<!-- ===== 3. Problems ===== -->
+<section class="problems">
+  <div class="container fade-in">
+    <h2 class="section-title">こんなお悩みありませんか？</h2>
+    <ul class="problems-list">
+      <li><span class="check-icon">✓</span>今の給料に不満がある</li>
+      <li><span class="check-icon">✓</span>職場の人間関係に疲れた</li>
+      <li><span class="check-icon">✓</span>転職したいけど何から始めればいいかわからない</li>
+      <li><span class="check-icon">✓</span>忙しくて転職活動する時間がない</li>
+      <li><span class="check-icon">✓</span>自分に合った職場を見つける自信がない</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 4. Service ===== -->
+<section class="service">
+  <div class="container fade-in">
+    <h2 class="section-title">看護師リーチが<br>選ばれる3つの理由</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🔑</div>
+        <h3 class="card-title">非公開求人へのアクセス</h3>
+        <p class="card-text">一般には公開されていない求人を多数保有。<br>あなたにぴったりの職場が見つかります。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👩‍⚕️</div>
+        <h3 class="card-title">完全個別対応</h3>
+        <p class="card-text">担当者があなた専属でサポート。<br>状況や希望に合わせてオーダーメイドで対応します。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3 class="card-title">転職後も寄り添う伴走者</h3>
+        <p class="card-text">転職が決まったあとも安心。<br>新しい職場でのお悩みもいつでも相談できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. Trust ===== -->
+<section class="trust">
+  <div class="container fade-in">
+    <h2 class="section-title">選ばれています</h2>
+
+    <!-- ⚠️ 実績数字：クライアントからデータ取得後に差し替え -->
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">転職支援実績</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">98%</span>
+        <span class="stat-label">利用者満足度</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">1,000+</span>
+        <span class="stat-label">非公開求人数</span>
+      </div>
+    </div>
+
+    <!-- ⚠️ お客様の声：クライアントからテキスト取得後に差し替え -->
+    <div class="testimonials">
+      <div class="testimonial">
+        <div class="testimonial-header">
+          <span class="testimonial-name">A.Sさん（30代・総合病院→クリニック）</span>
+          <span class="testimonial-stars">★★★★★</span>
+        </div>
+        <p class="testimonial-text">忙しくて転職活動ができなかったのですが、LINEだけでやり取りできたので負担なく転職できました。今の職場にとても満足しています。</p>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-header">
+          <span class="testimonial-name">M.Kさん（20代・急性期→訪問看護）</span>
+          <span class="testimonial-stars">★★★★★</span>
+        </div>
+        <p class="testimonial-text">自分では見つけられなかった非公開求人を紹介してもらえました。担当の方が親身に相談に乗ってくれて心強かったです。</p>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-header">
+          <span class="testimonial-name">R.Tさん（40代・病棟→デイサービス）</span>
+          <span class="testimonial-stars">★★★★☆</span>
+        </div>
+        <p class="testimonial-text">年齢的に転職は難しいかなと思っていましたが、経験を活かせる職場を提案してもらえました。転職後のフォローも助かっています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. Flow ===== -->
+<section class="flow">
+  <div class="container fade-in">
+    <h2 class="section-title">ご利用の流れ</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-indicator">
+          <div class="step-number">STEP1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h3 class="step-title">LINEを友達追加する</h3>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-indicator">
+          <div class="step-number">STEP2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h3 class="step-title">担当者からご連絡（24時間以内）</h3>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-indicator">
+          <div class="step-number">STEP3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h3 class="step-title">ご希望・お悩みをヒアリング</h3>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-indicator">
+          <div class="step-number">STEP4</div>
+        </div>
+        <div class="step-content">
+          <h3 class="step-title">求人のご提案・転職サポート開始</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. CTA Section ===== -->
+<section class="cta-section">
+  <div class="container fade-in">
+    <h2 class="section-title">まずは無料で<br>ご相談ください</h2>
+    <p class="cta-sub">登録は30秒・完全無料・しつこい営業なし</p>
+    <a href="#" class="cta-button" id="cta-line-btn">
+      <svg class="line-icon line-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386a.63.63 0 0 1-.63-.629V8.108a.63.63 0 0 1 .63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 0 1-.63.63.625.625 0 0 1-.51-.262l-2.397-3.274v2.906a.63.63 0 0 1-.63.63.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 .63-.63c.2 0 .385.096.504.259l2.403 3.274V8.108a.63.63 0 0 1 1.26 0v4.771zm-5.741 0a.63.63 0 0 1-1.26 0V8.108a.63.63 0 0 1 1.26 0v4.771zm-2.451.63H4.932a.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 1.26 0v4.141h1.752c.348 0 .63.283.63.63 0 .344-.282.63-.63.63zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.921.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      LINEで無料相談する
+    </a>
+    <p class="cta-note">※ 個人情報は厳重に管理します</p>
+  </div>
+</section>
+
+<!-- ===== 8. FAQ ===== -->
+<section class="faq">
+  <div class="container fade-in">
+    <h2 class="section-title">よくあるご質問</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">Q. 登録は無料ですか？</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">はい、完全無料です。転職が決まった際も求職者様への費用は一切かかりません。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Q. 在職中でも相談できますか？</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">もちろんです。在職中の方のご相談も多く承っております。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Q. 連絡はLINEだけですか？</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">基本的にLINEでのやり取りになります。ご希望があればお電話でも対応可能です。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Q. 転職先が決まらなかった場合はどうなりますか？</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">焦らずじっくりサポートします。ご希望に合う求人が見つかるまで一緒に探します。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9. Footer ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">看護師リーチ</div>
+    <p class="footer-copy">&copy; 2026 看護師リーチ All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- ===== Fixed Bottom CTA (Mobile) ===== -->
+<div class="fixed-bottom-cta">
+  <a href="#" class="cta-button" id="fixed-line-btn">
+    <svg class="line-icon line-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386a.63.63 0 0 1-.63-.629V8.108a.63.63 0 0 1 .63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 0 1-.63.63.625.625 0 0 1-.51-.262l-2.397-3.274v2.906a.63.63 0 0 1-.63.63.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 .63-.63c.2 0 .385.096.504.259l2.403 3.274V8.108a.63.63 0 0 1 1.26 0v4.771zm-5.741 0a.63.63 0 0 1-1.26 0V8.108a.63.63 0 0 1 1.26 0v4.771zm-2.451.63H4.932a.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 1.26 0v4.141h1.752c.348 0 .63.283.63.63 0 .344-.282.63-.63.63zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.921.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    LINEで無料相談する
+  </a>
+</div>
+
+<script>
+// ===== LINE URL（クライアントからURL取得後に設定）=====
+const LINE_URL = "";
+
+// 全LINEボタンにURLを設定
+document.querySelectorAll('#header-line-btn, #hero-line-btn, #cta-line-btn, #fixed-line-btn').forEach(btn => {
+  if (LINE_URL) {
+    btn.href = LINE_URL;
+  }
+});
+
+// ===== FAQ Accordion =====
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.parentElement;
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-answer').style.maxHeight = null;
+    });
+
+    // Open clicked (if it was closed)
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+
+// ===== Scroll Fade-in (Intersection Observer) =====
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+fadeEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
