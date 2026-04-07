@@ -386,35 +386,6 @@ a {
   fill: none;
 }
 
-/* ========== Photo Strip ========== */
-.photo-strip {
-  height: 220px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.photo-strip::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, var(--color-white) 0%, transparent 15%, transparent 85%, var(--color-bg) 100%);
-}
-
-.photo-strip--nurse-care {
-  background-image: url('https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80');
-}
-
-.photo-strip--nurse-smile {
-  background-image: url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80');
-  background-position: center 30%;
-}
-
-.photo-strip--nurse-smile::after {
-  background: linear-gradient(to bottom, var(--color-bg) 0%, transparent 15%, transparent 85%, rgba(232,127,175,0.3) 100%);
-}
-
 /* ========== 4. Service (Reasons) ========== */
 .service {
   background: var(--color-bg);
@@ -935,9 +906,6 @@ a {
   </div>
 </section>
 
-<!-- ===== Photo: Nurse Care ===== -->
-<div class="photo-strip photo-strip--nurse-care fade-in" role="img" aria-label="看護師が患者に寄り添っている様子"></div>
-
 <!-- ===== 4. Service ===== -->
 <section class="service" aria-labelledby="service-title">
   <div class="container fade-in">
@@ -1067,9 +1035,6 @@ a {
     </div>
   </div>
 </section>
-
-<!-- ===== Photo: Nurse Smile ===== -->
-<div class="photo-strip photo-strip--nurse-smile fade-in" role="img" aria-label="笑顔の女性医療スタッフ"></div>
 
 <!-- ===== 7. CTA Section ===== -->
 <section class="cta-section" aria-labelledby="cta-title">
