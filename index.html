@@ -386,6 +386,57 @@ a {
   fill: none;
 }
 
+/* ========== Section Image ========== */
+.section-image {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 28px;
+  overflow: hidden;
+  position: relative;
+}
+
+.section-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+/* ========== Step Image ========== */
+.step-image {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.step-image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ========== CTA Image ========== */
+.cta-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 28px;
+  border: 4px solid rgba(255,255,255,0.3);
+  position: relative;
+}
+
+.cta-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 75% 20%;
+  display: block;
+}
+
 /* ========== 4. Service (Reasons) ========== */
 .service {
   background: var(--color-bg);
@@ -907,6 +958,9 @@ body {
 <section class="problems" aria-labelledby="problems-title">
   <div class="container fade-in">
     <p class="section-subtitle">PROBLEMS</p>
+    <div class="section-image fade-in">
+      <img src="problems.png" alt="病院の廊下で疲れた様子の看護師" loading="lazy">
+    </div>
     <h2 class="section-title" id="problems-title">こんなお悩みありませんか？</h2>
     <ul class="problems-list" role="list">
       <li><span class="check-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>今の給料に不満がある</li>
@@ -1021,6 +1075,7 @@ body {
         <div class="step-content">
           <h3 class="step-title">LINEを友達追加する</h3>
           <p class="step-desc">ボタンをタップするだけ、30秒で完了</p>
+          <div class="step-image"><img src="step1.png" alt="LINEの友達追加画面" loading="lazy"></div>
         </div>
       </div>
       <div class="step" role="listitem">
@@ -1028,6 +1083,7 @@ body {
         <div class="step-content">
           <h3 class="step-title">担当者からご連絡</h3>
           <p class="step-desc">24時間以内にLINEでメッセージをお送りします</p>
+          <div class="step-image"><img src="step2.png" alt="担当者がスマホでメッセージを送っている" loading="lazy"></div>
         </div>
       </div>
       <div class="step" role="listitem">
@@ -1035,6 +1091,7 @@ body {
         <div class="step-content">
           <h3 class="step-title">ご希望・お悩みをヒアリング</h3>
           <p class="step-desc">あなたの状況に合わせて丁寧にお聞きします</p>
+          <div class="step-image"><img src="step3.png" alt="カフェで相談している2人の女性" loading="lazy"></div>
         </div>
       </div>
       <div class="step" role="listitem">
@@ -1042,6 +1099,7 @@ body {
         <div class="step-content">
           <h3 class="step-title">求人のご提案・転職サポート開始</h3>
           <p class="step-desc">非公開求人含め、最適な職場をご紹介します</p>
+          <div class="step-image"><img src="step4.png" alt="新しい職場の前で笑顔の看護師" loading="lazy"></div>
         </div>
       </div>
     </div>
@@ -1051,6 +1109,9 @@ body {
 <!-- ===== 7. CTA Section ===== -->
 <section class="cta-section" aria-labelledby="cta-title">
   <div class="container fade-in">
+    <div class="cta-image fade-in">
+      <img src="cta.png" alt="笑顔でスマホを見ている女性" loading="lazy">
+    </div>
     <h2 class="section-title" id="cta-title">まずは無料で<br>ご相談ください</h2>
     <div class="cta-badges">
       <span class="cta-badge">登録30秒</span>
