@@ -221,8 +221,8 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(160deg, rgba(255,240,245,0.75) 0%, rgba(249,168,201,0.7) 40%, rgba(232,127,175,0.75) 100%),
-              url('hero.png') center 20%/cover no-repeat;
+  background: linear-gradient(160deg, rgba(255,240,245,0.65) 0%, rgba(249,168,201,0.6) 40%, rgba(232,127,175,0.65) 100%),
+              url('hero2.png') center center/cover no-repeat;
   padding: 110px 24px 80px;
   position: relative;
 }
@@ -851,11 +851,23 @@ a {
   animation: none;
 }
 
-/* ========== Desktop adjustment ========== */
-@media (min-width: 481px) {
-  .fixed-bottom-cta {
-    display: none;
-  }
+/* ========== スマホ最大幅に固定 ========== */
+body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(0,0,0,0.08);
+}
+
+.header {
+  max-width: var(--max-width);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fixed-bottom-cta {
+  max-width: var(--max-width);
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* ========== LINE SVG Inline ========== */
