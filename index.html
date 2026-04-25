@@ -1,1261 +1,698 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>看護師リーチ｜「転職すべきか」から、一緒に考えます</title>
-<meta name="description" content="看護師専門の転職支援サービス。非公開求人多数、完全個別対応、相談無料。LINEで気軽にご相談ください。">
-
-<!-- ===== Meta Pixel（タグID取得後に差し替え）===== -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-// ⚠️ 下記の 'XXXXXXXXXXXXXXXXX' をMeta Pixel IDに差し替え
-// fbq('init', 'XXXXXXXXXXXXXXXXX');
-// fbq('track', 'PageView');
-</script>
-
-<!-- ===== Google Ads Tag（タグID取得後に差し替え）===== -->
-<!-- ⚠️ 下記の 'AW-XXXXXXXXX' をGoogle広告タグIDに差し替え -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'AW-XXXXXXXXX');
-</script> -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
-<style>
-/* ========== Reset & Base ========== */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --color-primary: #F9A8C9;
-  --color-primary-dark: #E87FAF;
-  --color-primary-deeper: #D4639A;
-  --color-accent: #FF6B9D;
-  --color-white: #FFFFFF;
-  --color-bg: #FFF5F8;
-  --color-bg-alt: #FFF0F5;
-  --color-text: #2D2D2D;
-  --color-text-light: #666666;
-  --color-text-muted: #999999;
-  --color-line: #06C755;
-  --color-line-hover: #05B34A;
-  --color-border: #F0E0E8;
-  --color-star: #FFB800;
-  --font-base: 'Noto Sans JP', sans-serif;
-  --font-heading: 'Noto Serif JP', serif;
-  --max-width: 480px;
-  --section-padding: 72px 24px;
-  --border-radius: 16px;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,0.08);
-  --transition-fast: 0.2s ease;
-  --transition-mid: 0.3s ease;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-base);
-  color: var(--color-text);
-  line-height: 1.8;
-  font-size: 16px;
-  background: var(--color-white);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ========== Accessibility ========== */
-*:focus-visible {
-  outline: 3px solid var(--color-primary-dark);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  .fade-in { opacity: 1; transform: none; }
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
-}
-
-/* ========== Utility ========== */
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.section-title {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 36px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-}
-
-.section-subtitle {
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--color-primary-dark);
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  margin-bottom: 12px;
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ========== 1. Header ========== */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid transparent;
-  z-index: 1000;
-  padding: 12px 0;
-  transition: box-shadow var(--transition-mid), border-color var(--transition-mid);
-}
-
-.header.scrolled {
-  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-  border-bottom-color: var(--color-border);
-}
-
-.header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-logo {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  color: var(--color-primary-dark);
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
-
-.header-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--color-line);
-  color: var(--color-white);
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 10px 18px;
-  border-radius: 50px;
-  min-height: 44px;
-  transition: background var(--transition-fast), transform var(--transition-fast);
-}
-
-.header-cta:hover {
-  background: var(--color-line-hover);
-  transform: translateY(-1px);
-}
-
-.line-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
-
-/* ========== 2. Hero ========== */
-.hero {
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: linear-gradient(160deg, rgba(255,240,245,0.65) 0%, rgba(249,168,201,0.6) 40%, rgba(232,127,175,0.65) 100%),
-              url('hero2.png') center center/cover no-repeat;
-  padding: 110px 24px 80px;
-  position: relative;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: linear-gradient(to bottom, transparent, var(--color-white));
-  pointer-events: none;
-}
-
-.hero-inner {
-  max-width: var(--max-width);
-  position: relative;
-  z-index: 1;
-}
-
-.hero-badge {
-  display: inline-block;
-  background: rgba(255,255,255,0.25);
-  backdrop-filter: blur(8px);
-  color: var(--color-white);
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 6px 16px;
-  border-radius: 50px;
-  margin-bottom: 20px;
-  letter-spacing: 0.08em;
-  border: 1px solid rgba(255,255,255,0.3);
-}
-
-.hero-catch {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
-  line-height: 1.55;
-  color: var(--color-white);
-  margin-bottom: 12px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.12);
-}
-
-.hero-catch-sub {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--color-white);
-  margin-bottom: 24px;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.1);
-  font-weight: 500;
-}
-
-.hero-sub {
-  font-size: 0.85rem;
-  color: var(--color-white);
-  margin-bottom: 36px;
-  opacity: 0.95;
-  letter-spacing: 0.08em;
-  font-weight: 500;
-}
-
-.hero-sub span {
-  display: inline-block;
-  padding: 0 8px;
-}
-
-.hero-sub span:not(:last-child) {
-  border-right: 1px solid rgba(255,255,255,0.4);
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: var(--color-line);
-  color: var(--color-white);
-  font-size: 1.1rem;
-  font-weight: 700;
-  padding: 18px 36px;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  min-height: 56px;
-  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-  box-shadow: 0 4px 20px rgba(6, 199, 85, 0.3);
-  position: relative;
-}
-
-.cta-button:hover {
-  background: var(--color-line-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(6, 199, 85, 0.4);
-}
-
-.cta-button:active {
-  transform: translateY(0);
-}
-
-.cta-button .line-icon {
-  width: 24px;
-  height: 24px;
-}
-
-@keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(6,199,85,0.4); }
-  70% { box-shadow: 0 0 0 12px rgba(6,199,85,0); }
-  100% { box-shadow: 0 0 0 0 rgba(6,199,85,0); }
-}
-
-.hero .cta-button {
-  animation: pulse-ring 2.5s infinite;
-}
-
-/* ========== 3. Problems ========== */
-.problems {
-  background: var(--color-white);
-  padding: var(--section-padding);
-}
-
-.problems-list {
-  list-style: none;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.problems-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 14px 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.problems-list li:last-child {
-  border-bottom: none;
-}
-
-.check-icon {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  background: var(--color-bg);
-  border: 2px solid var(--color-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1px;
-}
-
-.check-icon svg {
-  width: 14px;
-  height: 14px;
-  stroke: var(--color-primary-dark);
-  stroke-width: 3;
-  fill: none;
-}
-
-/* ========== Section Image ========== */
-.section-image {
-  width: 100%;
-  border-radius: 20px;
-  margin-bottom: 28px;
-  overflow: hidden;
-  position: relative;
-}
-
-.section-image img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  object-position: center 30%;
-  display: block;
-}
-
-/* ========== Step Image ========== */
-.step-image {
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-top: 10px;
-}
-
-.step-image img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  display: block;
-}
-
-/* ========== CTA Image ========== */
-.cta-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 28px;
-  border: 4px solid rgba(255,255,255,0.3);
-  position: relative;
-}
-
-.cta-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 75% 20%;
-  display: block;
-}
-
-/* ========== 4. Service (Reasons) ========== */
-.service {
-  background: var(--color-bg);
-  padding: var(--section-padding);
-}
-
-.cards {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.card {
-  background: var(--color-white);
-  border-radius: var(--border-radius);
-  padding: 32px 24px;
-  text-align: center;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--color-border);
-  transition: transform var(--transition-mid), box-shadow var(--transition-mid);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-.card-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  background: var(--color-bg);
-  color: var(--color-primary-dark);
-  font-size: 0.75rem;
-  font-weight: 700;
-  border-radius: 50%;
-  margin-bottom: 12px;
-}
-
-.card-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 16px;
-  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-icon svg {
-  width: 28px;
-  height: 28px;
-  stroke: var(--color-primary-dark);
-  stroke-width: 1.5;
-  fill: none;
-}
-
-.card-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--color-text);
-}
-
-.card-text {
-  font-size: 0.88rem;
-  color: var(--color-text-light);
-  line-height: 1.75;
-}
-
-/* ========== 5. Trust (Results) ========== */
-.trust {
-  background: var(--color-white);
-  padding: var(--section-padding);
-}
-
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  max-width: var(--max-width);
-  margin: 0 auto 40px;
-}
-
-.stat-item {
-  flex: 1;
-  text-align: center;
-  background: var(--color-bg);
-  border-radius: var(--border-radius);
-  padding: 24px 8px;
-  border: 1px solid var(--color-border);
-}
-
-.stat-number {
-  font-family: var(--font-heading);
-  font-size: 1.7rem;
-  color: var(--color-primary-dark);
-  display: block;
-  line-height: 1.2;
-  font-weight: 700;
-}
-
-.stat-label {
-  font-size: 0.7rem;
-  color: var(--color-text-light);
-  margin-top: 6px;
-  letter-spacing: 0.02em;
-}
-
-.testimonials {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.testimonial {
-  background: var(--color-bg);
-  border-radius: var(--border-radius);
-  padding: 24px;
-  border: 1px solid var(--color-border);
-  position: relative;
-}
-
-.testimonial::before {
-  content: '\201C';
-  position: absolute;
-  top: 12px;
-  left: 20px;
-  font-size: 3rem;
-  color: var(--color-primary);
-  opacity: 0.3;
-  font-family: Georgia, serif;
-  line-height: 1;
-}
-
-.testimonial-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.testimonial-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.testimonial-avatar svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--color-white);
-}
-
-.testimonial-info {
-  flex: 1;
-}
-
-.testimonial-name {
-  font-size: 0.82rem;
-  font-weight: 700;
-  display: block;
-  line-height: 1.4;
-}
-
-.testimonial-stars {
-  color: var(--color-star);
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  display: block;
-  margin-top: 2px;
-}
-
-.testimonial-text {
-  font-size: 0.88rem;
-  color: var(--color-text-light);
-  line-height: 1.75;
-  padding-left: 4px;
-}
-
-/* ========== 6. Flow ========== */
-.flow {
-  background: var(--color-bg);
-  padding: var(--section-padding);
-}
-
-.steps {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.step {
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-  padding: 20px 0;
-  position: relative;
-}
-
-.step-indicator {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.step-number {
-  width: 48px;
-  height: 48px;
-  background: var(--color-white);
-  color: var(--color-primary-dark);
-  border: 2px solid var(--color-primary-dark);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  transition: background var(--transition-mid), color var(--transition-mid);
-}
-
-.step:hover .step-number {
-  background: var(--color-primary-dark);
-  color: var(--color-white);
-}
-
-.step-line {
-  width: 2px;
-  height: 100%;
-  min-height: 20px;
-  background: linear-gradient(to bottom, var(--color-primary-dark), var(--color-primary));
-  margin-top: 8px;
-}
-
-.step:last-child .step-line {
-  display: none;
-}
-
-.step-content {
-  padding-top: 12px;
-}
-
-.step-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.step-desc {
-  font-size: 0.8rem;
-  color: var(--color-text-light);
-  margin-top: 4px;
-}
-
-/* ========== 7. CTA Section ========== */
-.cta-section {
-  background: linear-gradient(160deg, #F9A8C9 0%, #E87FAF 60%, var(--color-primary-deeper) 100%);
-  padding: 80px 24px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0.08) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.cta-section .section-title {
-  color: var(--color-white);
-  position: relative;
-}
-
-.cta-sub {
-  color: var(--color-white);
-  font-size: 0.9rem;
-  margin-bottom: 32px;
-  opacity: 0.95;
-  position: relative;
-}
-
-.cta-badges {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 32px;
-  position: relative;
-}
-
-.cta-badge {
-  background: rgba(255,255,255,0.18);
-  color: var(--color-white);
-  font-size: 0.78rem;
-  font-weight: 500;
-  padding: 6px 14px;
-  border-radius: 50px;
-  border: 1px solid rgba(255,255,255,0.25);
-  backdrop-filter: blur(4px);
-}
-
-.cta-note {
-  color: var(--color-white);
-  font-size: 0.75rem;
-  margin-top: 16px;
-  opacity: 0.75;
-  position: relative;
-}
-
-/* ========== 8. FAQ ========== */
-.faq {
-  background: var(--color-white);
-  padding: var(--section-padding);
-}
-
-.faq-list {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.faq-item {
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  transition: box-shadow var(--transition-mid);
-}
-
-.faq-item:hover {
-  box-shadow: var(--shadow-sm);
-}
-
-.faq-question {
-  width: 100%;
-  background: var(--color-white);
-  border: none;
-  padding: 18px 20px;
-  font-size: 0.92rem;
-  font-weight: 700;
-  font-family: var(--font-base);
-  color: var(--color-text);
-  text-align: left;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  min-height: 56px;
-  transition: background var(--transition-fast);
-}
-
-.faq-question:hover {
-  background: var(--color-bg);
-}
-
-.faq-toggle {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--color-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background var(--transition-fast), transform var(--transition-mid);
-}
-
-.faq-toggle svg {
-  width: 14px;
-  height: 14px;
-  stroke: var(--color-primary-dark);
-  stroke-width: 2.5;
-  fill: none;
-  transition: transform var(--transition-mid);
-}
-
-.faq-item.open .faq-toggle {
-  background: var(--color-primary-dark);
-}
-
-.faq-item.open .faq-toggle svg {
-  stroke: var(--color-white);
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease;
-}
-
-.faq-answer-inner {
-  padding: 0 20px 20px;
-  font-size: 0.88rem;
-  color: var(--color-text-light);
-  line-height: 1.8;
-}
-
-/* ========== 9. Footer ========== */
-.footer {
-  background: #2D2D2D;
-  color: var(--color-white);
-  text-align: center;
-  padding: 48px 24px;
-}
-
-.footer-logo {
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-  font-weight: 700;
-}
-
-.footer-copy {
-  font-size: 0.72rem;
-  opacity: 0.5;
-}
-
-/* ========== Fixed Bottom CTA (Mobile) ========== */
-.fixed-bottom-cta {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 12px 20px calc(12px + env(safe-area-inset-bottom, 0px));
-  z-index: 999;
-  display: flex;
-  justify-content: center;
-  box-shadow: 0 -2px 16px rgba(0,0,0,0.06);
-}
-
-.fixed-bottom-cta .cta-button {
-  width: 100%;
-  max-width: var(--max-width);
-  font-size: 1rem;
-  padding: 16px 24px;
-  animation: none;
-}
-
-/* ========== スマホ最大幅に固定 ========== */
-body {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  box-shadow: 0 0 40px rgba(0,0,0,0.08);
-}
-
-.header {
-  max-width: var(--max-width);
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.fixed-bottom-cta {
-  max-width: var(--max-width);
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* ========== LINE SVG Inline ========== */
-.line-svg {
-  fill: currentColor;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>看護師REACH｜5年後も笑って働ける道を一緒に</title>
+  <meta name="description" content="看護師専門のキャリア支援サービス、看護師REACH。転職する・しないも含めて、5年後の働き方を一緒に考えます。">
+  <style>
+    :root {
+      --coral: #ee6e85;
+      --coral-deep: #de5872;
+      --blue: #cde3ee;
+      --cream: #faf9f5;
+      --pink-soft: #fce4e4;
+      --line: #06c755;
+      --text: #333333;
+      --shadow: 0 18px 48px rgba(238, 110, 133, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--cream);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(205, 227, 238, 0.55), transparent 32rem),
+        radial-gradient(circle at bottom right, rgba(252, 228, 228, 0.75), transparent 34rem),
+        linear-gradient(180deg, #ffffff 0%, var(--cream) 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(100%, 430px);
+      margin: 0 auto;
+      padding: 0 14px;
+    }
+
+    .lp-frame {
+      width: min(100%, 390px);
+      margin: 0 auto;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .section-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      border: 0;
+      vertical-align: top;
+      background: #ffffff;
+    }
+
+    .hero-section {
+      position: relative;
+      background: var(--blue);
+    }
+
+    .hero-cta {
+      position: absolute;
+      right: 22px;
+      bottom: 28px;
+      left: 22px;
+      z-index: 2;
+    }
+
+    .hero-cta .line-button {
+      min-height: 58px;
+      border: 4px solid #ffffff;
+      box-shadow: 0 12px 26px rgba(6, 199, 85, 0.38), 0 4px 0 rgba(0, 126, 48, 0.2);
+    }
+
+    .hero-cta .line-button__main {
+      font-size: 17px;
+    }
+
+    .voices-section {
+      position: relative;
+      overflow: hidden;
+      padding: 34px 20px 48px;
+      background: #f9e2e3;
+    }
+
+    .voices-section::before,
+    .voices-section::after {
+      position: absolute;
+      content: "";
+      border-radius: 999px;
+      background: rgba(238, 110, 133, 0.1);
+      pointer-events: none;
+    }
+
+    .voices-section::before {
+      width: 88px;
+      height: 88px;
+      top: 18px;
+      left: -42px;
+    }
+
+    .voices-section::after {
+      width: 118px;
+      height: 118px;
+      right: -56px;
+      bottom: 120px;
+    }
+
+    .voices-lead {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 24px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.55;
+      letter-spacing: 0.01em;
+    }
+
+    .voices-lead::after {
+      display: block;
+      width: 86%;
+      height: 12px;
+      margin: 4px auto 0;
+      border-right: 2px solid var(--text);
+      border-bottom: 2px solid var(--text);
+      border-left: 2px solid var(--text);
+      clip-path: polygon(0 0, 44% 0, 50% 100%, 56% 0, 100% 0, 100% 18%, 57% 18%, 50% 100%, 43% 18%, 0 18%);
+      content: "";
+    }
+
+    .voices-lead strong {
+      color: var(--coral);
+      font-size: 24px;
+      text-shadow:
+        2px 2px 0 #ffffff,
+        -2px 2px 0 #ffffff,
+        2px -2px 0 #ffffff,
+        -2px -2px 0 #ffffff;
+    }
+
+    .voice-metrics {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 0 0 34px;
+    }
+
+    .metric {
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      aspect-ratio: 1;
+      border: 4px solid #ffffff;
+      border-radius: 999px;
+      color: #ffffff;
+      background: linear-gradient(160deg, #f8587b 0%, var(--coral-deep) 100%);
+      box-shadow: 0 10px 18px rgba(238, 110, 133, 0.18);
+      text-align: center;
+      line-height: 1.05;
+    }
+
+    .metric__label {
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .metric__value {
+      margin-top: 3px;
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .metric__unit {
+      margin-left: 1px;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .voice-cards {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 28px;
+    }
+
+    .voice-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 14px;
+      min-height: 210px;
+      padding: 28px 18px 24px;
+      border-radius: 0 34px 0 34px;
+      background: #ffffff;
+      box-shadow: 7px 8px 0 var(--coral), 0 12px 24px rgba(238, 110, 133, 0.1);
+    }
+
+    .voice-card__person {
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      gap: 8px;
+      padding-right: 12px;
+      border-right: 2px solid #d6d6d6;
+      text-align: center;
+    }
+
+    .voice-card__avatar {
+      display: grid;
+      place-items: center;
+      width: 70px;
+      height: 70px;
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 900;
+      background:
+        radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.9) 0 12px, transparent 13px),
+        linear-gradient(160deg, var(--blue), var(--coral));
+      box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.78);
+    }
+
+    .voice-card__name {
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .voice-card__text {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1.72;
+    }
+
+    .voice-card__text strong {
+      color: var(--coral-deep);
+    }
+
+    .image-stack {
+      display: grid;
+      gap: 12px;
+      padding: 14px 0;
+      background: #ffffff;
+    }
+
+    .image-stack.is-pink {
+      background: var(--pink-soft);
+    }
+
+    .image-stack.is-blue {
+      background: var(--blue);
+    }
+
+    .image-stack.is-cream {
+      background: var(--cream);
+    }
+
+    .line-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 64px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      color: #ffffff;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      background: var(--line);
+      box-shadow: 0 10px 24px rgba(6, 199, 85, 0.34);
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .line-button:focus-visible,
+    .line-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(6, 199, 85, 0.42);
+      outline: none;
+    }
+
+    .line-button__copy {
+      display: grid;
+      gap: 2px;
+      line-height: 1.25;
+    }
+
+    .line-button__sub {
+      font-size: 12px;
+      font-weight: 700;
+      opacity: 0.95;
+    }
+
+    .line-button__main {
+      font-size: 18px;
+    }
+
+    .line-button__arrow {
+      margin-left: 12px;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .support-section {
+      position: relative;
+      background: #ffffff;
+    }
+
+    .support-cta {
+      padding: 20px 22px 28px;
+      background: #ffffff;
+    }
+
+    .closing-section {
+      position: relative;
+      overflow: hidden;
+      padding: 40px 22px 44px;
+      background: linear-gradient(180deg, #fce4e4 0%, #ffffff 100%);
+      text-align: center;
+    }
+
+    .closing-section::before,
+    .closing-section::after {
+      position: absolute;
+      content: "";
+      border-radius: 999px;
+      background: rgba(238, 110, 133, 0.12);
+      pointer-events: none;
+    }
+
+    .closing-section::before {
+      width: 90px;
+      height: 90px;
+      top: -20px;
+      right: -30px;
+    }
+
+    .closing-section::after {
+      width: 70px;
+      height: 70px;
+      left: -24px;
+      bottom: 80px;
+    }
+
+    .closing-lead {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 8px;
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.5;
+      letter-spacing: 0.01em;
+    }
+
+    .closing-lead strong {
+      background: linear-gradient(transparent 60%, #fff176 60%);
+      padding: 0 4px;
+    }
+
+    .closing-sub {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 22px;
+      color: #666666;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .closing-badges {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 0 0 24px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .closing-badges li {
+      padding: 7px 14px;
+      border: 2px solid var(--coral);
+      border-radius: 999px;
+      color: var(--coral-deep);
+      font-size: 12px;
+      font-weight: 900;
+      background: #ffffff;
+    }
+
+    .closing-cta {
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-section {
+      padding: 40px 22px 48px;
+      background: var(--cream);
+    }
+
+    .faq-heading {
+      margin: 0 0 6px;
+      color: var(--coral-deep);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-align: center;
+    }
+
+    .faq-title {
+      margin: 0 0 24px;
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-item {
+      border-radius: 16px;
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(238, 110, 133, 0.08);
+      overflow: hidden;
+    }
+
+    .faq-item[open] {
+      box-shadow: 0 12px 26px rgba(238, 110, 133, 0.16);
+    }
+
+    .faq-item summary {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 16px 44px 16px 18px;
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.5;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::before {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 900;
+      background: var(--coral);
+      content: "Q";
+    }
+
+    .faq-item summary::after {
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid var(--coral);
+      border-bottom: 2px solid var(--coral);
+      transform: translateY(-75%) rotate(45deg);
+      transition: transform 0.2s ease;
+      content: "";
+    }
+
+    .faq-item[open] summary::after {
+      transform: translateY(-25%) rotate(-135deg);
+    }
+
+    .faq-answer {
+      display: flex;
+      gap: 10px;
+      padding: 0 18px 18px 18px;
+      color: #444444;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .faq-answer::before {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      color: var(--coral-deep);
+      font-size: 14px;
+      font-weight: 900;
+      background: var(--pink-soft);
+      content: "A";
+    }
+
+    .site-footer {
+      padding: 30px 22px 40px;
+      background: #ffffff;
+      text-align: center;
+      border-top: 1px solid rgba(238, 110, 133, 0.18);
+    }
+
+    .site-footer__logo {
+      display: inline-block;
+      margin: 0 0 10px;
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--coral);
+      letter-spacing: 0.04em;
+    }
+
+    .site-footer__copy {
+      margin: 0;
+      color: #888888;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+
+    @media (min-width: 720px) {
+      .page {
+        padding-top: 24px;
+      }
+
+      .lp-frame {
+        border-radius: 18px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .voices-section {
+        padding-right: 14px;
+        padding-left: 14px;
+      }
+
+      .voice-card {
+        grid-template-columns: 76px 1fr;
+        gap: 12px;
+        padding-right: 14px;
+        padding-left: 14px;
+      }
+
+      .voice-card__avatar {
+        width: 64px;
+        height: 64px;
+      }
+
+      .voice-card__text {
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <h1 class="sr-only">看護師REACH ランディングページ</h1>
 
-<!-- ===== 1. Header ===== -->
-<header class="header" role="banner">
-  <div class="container">
-    <div class="header-logo" aria-label="看護師リーチ ホーム">看護師リーチ</div>
-    <a href="#" class="header-cta" id="header-line-btn" aria-label="LINEで無料相談する">
-      <svg class="line-icon line-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386a.63.63 0 0 1-.63-.629V8.108a.63.63 0 0 1 .63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 0 1-.63.63.625.625 0 0 1-.51-.262l-2.397-3.274v2.906a.63.63 0 0 1-.63.63.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 .63-.63c.2 0 .385.096.504.259l2.403 3.274V8.108a.63.63 0 0 1 1.26 0v4.771zm-5.741 0a.63.63 0 0 1-1.26 0V8.108a.63.63 0 0 1 1.26 0v4.771zm-2.451.63H4.932a.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 1.26 0v4.141h1.752c.348 0 .63.283.63.63 0 .344-.282.63-.63.63zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.921.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-      LINE相談
-    </a>
+  <div class="page">
+    <main class="lp-frame" aria-label="看護師REACHのランディングページ">
+      <section class="hero-section" aria-label="ファーストビュー">
+        <img class="section-image" src="看護師リーチ最新/01-first-view.png" alt="看護師REACH ファーストビュー">
+        <div class="hero-cta">
+          <a class="line-button" href="https://line.me/R/ti/p/@023mgjip" target="_blank" rel="noopener">
+            <span class="line-button__copy">
+              <span class="line-button__sub">30秒でかんたん相談</span>
+              <span class="line-button__main">LINEで無料相談する</span>
+            </span>
+            <span class="line-button__arrow" aria-hidden="true">›</span>
+          </a>
+        </div>
+      </section>
+
+      <section aria-label="お客様の声">
+        <img class="section-image" src="看護師リーチ最新/02-voices-showcase.png" alt="看護師REACH お客様の声">
+      </section>
+
+      <section aria-label="看護師リーチが選ばれる理由">
+        <img class="section-image" src="看護師リーチ最新/05-reasons-showcase-long-v3.png" alt="看護師REACHが選ばれる5つの理由">
+      </section>
+
+      <section aria-label="限定求人情報">
+        <img class="section-image" src="看護師リーチ最新/10-jobs-showcase.png" alt="看護師REACH 限定求人情報">
+      </section>
+
+      <section aria-label="お悩みセクション">
+        <img class="section-image" src="看護師リーチ最新/13-worries.png" alt="ひとりで抱えてませんか">
+      </section>
+
+      <section class="support-section" aria-label="おまかせセクション">
+        <img class="section-image" src="看護師リーチ最新/14-line-button-removed.png" alt="看護師REACHにお任せください">
+        <div class="support-cta">
+          <a class="line-button" href="https://line.me/R/ti/p/@023mgjip" target="_blank" rel="noopener">
+            <span class="line-button__copy">
+              <span class="line-button__sub">相談無料・転職しない相談もOK</span>
+              <span class="line-button__main">LINEで無料相談する</span>
+            </span>
+            <span class="line-button__arrow" aria-hidden="true">›</span>
+          </a>
+        </div>
+      </section>
+
+      <section aria-label="ご利用の流れ">
+        <img class="section-image" src="看護師リーチ最新/15.ご利用の流れ.png" alt="看護師REACH ご利用の流れ">
+      </section>
+
+      <section aria-label="医療機関との取り組み">
+        <img class="section-image" src="看護師リーチ最新/16.医療機関との取り組み.png" alt="看護師REACH 医療機関との取り組み">
+      </section>
+
+      <section class="closing-section" aria-label="最終クロージング">
+        <p class="closing-lead">気軽に<strong>LINEで話してみませんか？</strong></p>
+        <p class="closing-sub">話すだけで、これからの働き方が少し見えてきます</p>
+        <ul class="closing-badges">
+          <li>相談だけでもOK</li>
+          <li>転職しなくても大丈夫</li>
+          <li>しつこい連絡なし</li>
+        </ul>
+        <div class="closing-cta">
+          <a class="line-button" href="https://line.me/R/ti/p/@023mgjip" target="_blank" rel="noopener">
+            <span class="line-button__copy">
+              <span class="line-button__sub">30秒でかんたん相談</span>
+              <span class="line-button__main">LINEで無料相談する</span>
+            </span>
+            <span class="line-button__arrow" aria-hidden="true">›</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-label="よくある質問">
+        <p class="faq-heading">FAQ</p>
+        <h2 class="faq-title">よくある質問</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>登録は無料ですか？</summary>
+            <div class="faq-answer">はい、完全無料です。費用は一切かかりません。</div>
+          </details>
+          <details class="faq-item">
+            <summary>在職中でも相談できますか？</summary>
+            <div class="faq-answer">もちろんです。在職中の方も多く相談されています。</div>
+          </details>
+          <details class="faq-item">
+            <summary>連絡はLINEだけですか？</summary>
+            <div class="faq-answer">基本LINEですが、お電話も対応できます。</div>
+          </details>
+          <details class="faq-item">
+            <summary>転職先が決まらなかったら？</summary>
+            <div class="faq-answer">焦らず一緒に探します。ご希望に合うまでサポートします。</div>
+          </details>
+        </div>
+      </section>
+
+      <footer class="site-footer" aria-label="フッター">
+        <div class="site-footer__logo">看護師REACH</div>
+        <p class="site-footer__copy">© 2026 看護師REACH All Rights Reserved.</p>
+      </footer>
+    </main>
   </div>
-</header>
-
-<!-- ===== 2. Hero ===== -->
-<section class="hero" role="main">
-  <div class="hero-inner">
-    <div class="hero-badge">看護師専門の転職支援</div>
-    <h1 class="hero-catch">「転職すべきか」から、<br>一緒に考えます。</h1>
-    <p class="hero-catch-sub">看護師専属パートナー、看護師リーチ。</p>
-    <p class="hero-sub"><span>非公開求人多数</span><span>完全個別対応</span><span>相談無料</span></p>
-    <a href="#" class="cta-button" id="hero-line-btn" aria-label="LINEで無料相談する">
-      <svg class="line-icon line-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386a.63.63 0 0 1-.63-.629V8.108a.63.63 0 0 1 .63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 0 1-.63.63.625.625 0 0 1-.51-.262l-2.397-3.274v2.906a.63.63 0 0 1-.63.63.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 .63-.63c.2 0 .385.096.504.259l2.403 3.274V8.108a.63.63 0 0 1 1.26 0v4.771zm-5.741 0a.63.63 0 0 1-1.26 0V8.108a.63.63 0 0 1 1.26 0v4.771zm-2.451.63H4.932a.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 1.26 0v4.141h1.752c.348 0 .63.283.63.63 0 .344-.282.63-.63.63zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.921.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-      LINEで無料相談する
-    </a>
-  </div>
-</section>
-
-<!-- ===== 3. Problems ===== -->
-<section class="problems" aria-labelledby="problems-title">
-  <div class="container fade-in">
-    <p class="section-subtitle">PROBLEMS</p>
-    <div class="section-image fade-in">
-      <img src="problems.png" alt="病院の廊下で疲れた様子の看護師" loading="lazy">
-    </div>
-    <h2 class="section-title" id="problems-title">こんなお悩みありませんか？</h2>
-    <ul class="problems-list" role="list">
-      <li><span class="check-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>今の給料に不満がある</li>
-      <li><span class="check-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>職場の人間関係に疲れた</li>
-      <li><span class="check-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>転職したいけど何から始めればいいかわからない</li>
-      <li><span class="check-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>忙しくて転職活動する時間がない</li>
-      <li><span class="check-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>自分に合った職場を見つける自信がない</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ===== 4. Service ===== -->
-<section class="service" aria-labelledby="service-title">
-  <div class="container fade-in">
-    <p class="section-subtitle">WHY CHOOSE US</p>
-    <h2 class="section-title" id="service-title">看護師リーチが<br>選ばれる3つの理由</h2>
-    <div class="cards" role="list">
-      <div class="card" role="listitem">
-        <span class="card-number">01</span>
-        <div class="card-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        </div>
-        <h3 class="card-title">非公開求人へのアクセス</h3>
-        <p class="card-text">一般には公開されていない求人を多数保有。<br>あなたにぴったりの職場が見つかります。</p>
-      </div>
-      <div class="card" role="listitem">
-        <span class="card-number">02</span>
-        <div class="card-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h3 class="card-title">完全個別対応</h3>
-        <p class="card-text">担当者があなた専属でサポート。<br>状況や希望に合わせてオーダーメイドで対応します。</p>
-      </div>
-      <div class="card" role="listitem">
-        <span class="card-number">03</span>
-        <div class="card-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3 class="card-title">転職後も寄り添う伴走者</h3>
-        <p class="card-text">転職が決まったあとも安心。<br>新しい職場でのお悩みもいつでも相談できます。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 5. Trust ===== -->
-<section class="trust" aria-labelledby="trust-title">
-  <div class="container fade-in">
-    <p class="section-subtitle">RESULTS</p>
-    <h2 class="section-title" id="trust-title">選ばれています</h2>
-
-    <!-- ⚠️ 実績数字：クライアントからデータ取得後に差し替え -->
-    <div class="stats" role="list">
-      <div class="stat-item" role="listitem">
-        <span class="stat-number">500+</span>
-        <span class="stat-label">転職支援実績</span>
-      </div>
-      <div class="stat-item" role="listitem">
-        <span class="stat-number">98%</span>
-        <span class="stat-label">利用者満足度</span>
-      </div>
-      <div class="stat-item" role="listitem">
-        <span class="stat-number">1,000+</span>
-        <span class="stat-label">非公開求人数</span>
-      </div>
-    </div>
-
-    <!-- ⚠️ お客様の声：クライアントからテキスト取得後に差し替え -->
-    <div class="testimonials">
-      <div class="testimonial">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-          <div class="testimonial-info">
-            <span class="testimonial-name">A.Sさん（30代・総合病院→クリニック）</span>
-            <span class="testimonial-stars" aria-label="評価5点中5点">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          </div>
-        </div>
-        <p class="testimonial-text">忙しくて転職活動ができなかったのですが、LINEだけでやり取りできたので負担なく転職できました。今の職場にとても満足しています。</p>
-      </div>
-      <div class="testimonial">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-          <div class="testimonial-info">
-            <span class="testimonial-name">M.Kさん（20代・急性期→訪問看護）</span>
-            <span class="testimonial-stars" aria-label="評価5点中5点">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          </div>
-        </div>
-        <p class="testimonial-text">自分では見つけられなかった非公開求人を紹介してもらえました。担当の方が親身に相談に乗ってくれて心強かったです。</p>
-      </div>
-      <div class="testimonial">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-          <div class="testimonial-info">
-            <span class="testimonial-name">R.Tさん（40代・病棟→デイサービス）</span>
-            <span class="testimonial-stars" aria-label="評価5点中4点">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-          </div>
-        </div>
-        <p class="testimonial-text">年齢的に転職は難しいかなと思っていましたが、経験を活かせる職場を提案してもらえました。転職後のフォローも助かっています。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 6. Flow ===== -->
-<section class="flow" aria-labelledby="flow-title">
-  <div class="container fade-in">
-    <p class="section-subtitle">HOW IT WORKS</p>
-    <h2 class="section-title" id="flow-title">ご利用の流れ</h2>
-    <div class="steps" role="list">
-      <div class="step" role="listitem">
-        <div class="step-indicator"><div class="step-number">STEP1</div><div class="step-line"></div></div>
-        <div class="step-content">
-          <h3 class="step-title">LINEを友達追加する</h3>
-          <p class="step-desc">ボタンをタップするだけ、30秒で完了</p>
-          <div class="step-image"><img src="step1.png" alt="LINEの友達追加画面" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="step" role="listitem">
-        <div class="step-indicator"><div class="step-number">STEP2</div><div class="step-line"></div></div>
-        <div class="step-content">
-          <h3 class="step-title">担当者からご連絡</h3>
-          <p class="step-desc">24時間以内にLINEでメッセージをお送りします</p>
-          <div class="step-image"><img src="step2.png" alt="担当者がスマホでメッセージを送っている" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="step" role="listitem">
-        <div class="step-indicator"><div class="step-number">STEP3</div><div class="step-line"></div></div>
-        <div class="step-content">
-          <h3 class="step-title">ご希望・お悩みをヒアリング</h3>
-          <p class="step-desc">あなたの状況に合わせて丁寧にお聞きします</p>
-          <div class="step-image"><img src="step3.png" alt="カフェで相談している2人の女性" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="step" role="listitem">
-        <div class="step-indicator"><div class="step-number">STEP4</div></div>
-        <div class="step-content">
-          <h3 class="step-title">求人のご提案・転職サポート開始</h3>
-          <p class="step-desc">非公開求人含め、最適な職場をご紹介します</p>
-          <div class="step-image"><img src="step4.png" alt="新しい職場の前で笑顔の看護師" loading="lazy"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 7. CTA Section ===== -->
-<section class="cta-section" aria-labelledby="cta-title">
-  <div class="container fade-in">
-    <div class="cta-image fade-in">
-      <img src="cta.png" alt="笑顔でスマホを見ている女性" loading="lazy">
-    </div>
-    <h2 class="section-title" id="cta-title">まずは無料で<br>ご相談ください</h2>
-    <div class="cta-badges">
-      <span class="cta-badge">登録30秒</span>
-      <span class="cta-badge">完全無料</span>
-      <span class="cta-badge">しつこい営業なし</span>
-    </div>
-    <a href="#" class="cta-button" id="cta-line-btn" aria-label="LINEで無料相談する">
-      <svg class="line-icon line-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386a.63.63 0 0 1-.63-.629V8.108a.63.63 0 0 1 .63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 0 1-.63.63.625.625 0 0 1-.51-.262l-2.397-3.274v2.906a.63.63 0 0 1-.63.63.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 .63-.63c.2 0 .385.096.504.259l2.403 3.274V8.108a.63.63 0 0 1 1.26 0v4.771zm-5.741 0a.63.63 0 0 1-1.26 0V8.108a.63.63 0 0 1 1.26 0v4.771zm-2.451.63H4.932a.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 1.26 0v4.141h1.752c.348 0 .63.283.63.63 0 .344-.282.63-.63.63zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.921.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-      LINEで無料相談する
-    </a>
-    <p class="cta-note">※ 個人情報は厳重に管理します</p>
-  </div>
-</section>
-
-<!-- ===== 8. FAQ ===== -->
-<section class="faq" aria-labelledby="faq-title">
-  <div class="container fade-in">
-    <p class="section-subtitle">FAQ</p>
-    <h2 class="section-title" id="faq-title">よくあるご質問</h2>
-    <div class="faq-list" role="list">
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Q. 登録は無料ですか？</span>
-          <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-answer" role="region">
-          <div class="faq-answer-inner">はい、完全無料です。転職が決まった際も求職者様への費用は一切かかりません。</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Q. 在職中でも相談できますか？</span>
-          <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-answer" role="region">
-          <div class="faq-answer-inner">もちろんです。在職中の方のご相談も多く承っております。</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Q. 連絡はLINEだけですか？</span>
-          <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-answer" role="region">
-          <div class="faq-answer-inner">基本的にLINEでのやり取りになります。ご希望があればお電話でも対応可能です。</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Q. 転職先が決まらなかった場合はどうなりますか？</span>
-          <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-answer" role="region">
-          <div class="faq-answer-inner">焦らずじっくりサポートします。ご希望に合う求人が見つかるまで一緒に探します。</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 9. Footer ===== -->
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-logo">看護師リーチ</div>
-    <p class="footer-copy">&copy; 2026 看護師リーチ All Rights Reserved.</p>
-  </div>
-</footer>
-
-<!-- ===== Fixed Bottom CTA (Mobile) ===== -->
-<div class="fixed-bottom-cta" role="complementary">
-  <a href="#" class="cta-button" id="fixed-line-btn" aria-label="LINEで無料相談する">
-    <svg class="line-icon line-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386a.63.63 0 0 1-.63-.629V8.108a.63.63 0 0 1 .63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 0 1-.63.63.625.625 0 0 1-.51-.262l-2.397-3.274v2.906a.63.63 0 0 1-.63.63.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 .63-.63c.2 0 .385.096.504.259l2.403 3.274V8.108a.63.63 0 0 1 1.26 0v4.771zm-5.741 0a.63.63 0 0 1-1.26 0V8.108a.63.63 0 0 1 1.26 0v4.771zm-2.451.63H4.932a.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 1.26 0v4.141h1.752c.348 0 .63.283.63.63 0 .344-.282.63-.63.63zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.921.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-    LINEで無料相談する
-  </a>
-</div>
-
-<script>
-// ===== LINE URL =====
-const LINE_URL = "https://line.me/R/ti/p/@023mgjip";
-const THANKS_URL = "thanks.html";
-
-// 全LINEボタンにURLを設定 + サンクスページへリダイレクト（CV計測用）
-document.querySelectorAll('#header-line-btn, #hero-line-btn, #cta-line-btn, #fixed-line-btn').forEach(btn => {
-  if (LINE_URL) {
-    btn.href = LINE_URL;
-    btn.target = "_blank";
-    btn.rel = "noopener";
-    btn.addEventListener('click', () => {
-      setTimeout(() => { window.location.href = THANKS_URL; }, 300);
-    });
-  }
-});
-
-// ===== UTMパラメータ取得・保存（流入元計測）=====
-const urlParams = new URLSearchParams(window.location.search);
-const utmSource = urlParams.get('utm_source');
-const utmMedium = urlParams.get('utm_medium');
-const utmCampaign = urlParams.get('utm_campaign');
-if (utmSource) {
-  sessionStorage.setItem('utm_source', utmSource);
-  sessionStorage.setItem('utm_medium', utmMedium || '');
-  sessionStorage.setItem('utm_campaign', utmCampaign || '');
-}
-
-// ===== Header scroll shadow =====
-const header = document.querySelector('.header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 10);
-}, { passive: true });
-
-// ===== FAQ Accordion =====
-document.querySelectorAll('.faq-question').forEach(button => {
-  button.addEventListener('click', () => {
-    const item = button.parentElement;
-    const answer = item.querySelector('.faq-answer');
-    const isOpen = item.classList.contains('open');
-
-    document.querySelectorAll('.faq-item').forEach(i => {
-      i.classList.remove('open');
-      i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-      i.querySelector('.faq-answer').style.maxHeight = null;
-    });
-
-    if (!isOpen) {
-      item.classList.add('open');
-      button.setAttribute('aria-expanded', 'true');
-      answer.style.maxHeight = answer.scrollHeight + 'px';
-    }
-  });
-});
-
-// ===== Scroll Fade-in (Intersection Observer) =====
-const fadeEls = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-fadeEls.forEach(el => observer.observe(el));
-</script>
 
 </body>
 </html>
