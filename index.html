@@ -556,6 +556,39 @@
       letter-spacing: 0.04em;
     }
 
+    .lp-frame {
+      counter-reset: section;
+    }
+
+    .lp-frame > section,
+    .lp-frame > footer {
+      position: relative;
+      counter-increment: section;
+    }
+
+    .lp-frame > section::before,
+    .lp-frame > footer::before {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 5;
+      display: grid;
+      place-items: center;
+      min-width: 34px;
+      height: 34px;
+      padding: 0 8px;
+      border: 2px solid #ffffff;
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 900;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: var(--coral);
+      box-shadow: 0 6px 14px rgba(238, 110, 133, 0.45);
+      content: "SEC " counter(section);
+      letter-spacing: 0.04em;
+    }
+
     @media (min-width: 720px) {
       .page {
         padding-top: 24px;
