@@ -87,7 +87,7 @@
     .hero-cta {
       position: absolute;
       right: 22px;
-      bottom: 28px;
+      bottom: 12px;
       left: 22px;
       z-index: 2;
     }
@@ -333,12 +333,18 @@
 
     .support-section {
       position: relative;
+      padding-bottom: 50px;
       background: #ffffff;
     }
 
     .support-cta {
-      padding: 20px 22px 28px;
-      background: #ffffff;
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 2;
+      padding: 0;
+      background: transparent;
     }
 
     .closing-section {
@@ -589,6 +595,137 @@
       letter-spacing: 0.04em;
     }
 
+    /* === CTA enhancements ====================================== */
+    @keyframes cta-pulse-soft {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50%      { transform: translateY(-2px) scale(1.02); }
+    }
+    @keyframes cta-float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-4px); }
+    }
+    @keyframes cta-halo-pulse {
+      0%   { transform: scale(1);    opacity: 0.55; }
+      80%  { transform: scale(1.18); opacity: 0; }
+      100% { transform: scale(1.18); opacity: 0; }
+    }
+    @keyframes cta-shine {
+      0%   { left: -120%; }
+      45%  { left: 130%; }
+      100% { left: 130%; }
+    }
+
+    .cta-stamp {
+      position: absolute;
+      top: -14px;
+      right: -8px;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      background: var(--coral);
+      color: #ffffff;
+      text-align: center;
+      transform: rotate(-12deg);
+      box-shadow: 0 0 0 3px #ffffff, 0 8px 18px rgba(238, 110, 133, 0.45);
+      pointer-events: none;
+    }
+    .cta-stamp small {
+      display: block;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .cta-stamp strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    /* FV CTA = SAMPLE 5（無料スタンプ＋浮遊＋グラデ） */
+    .hero-cta {
+      animation: cta-float 3.2s ease-in-out infinite;
+    }
+    .hero-cta .line-button {
+      background: linear-gradient(180deg, #14d966, var(--line) 60%, #04a346);
+    }
+
+    /* 中間 CTA = SAMPLE 1（拡大＋立体＋微パルス） */
+    .support-cta .line-button {
+      min-height: 72px;
+      background: linear-gradient(180deg, #14d966, var(--line) 60%, #04a346);
+      box-shadow:
+        0 14px 32px rgba(6, 199, 85, 0.45),
+        0 4px 0 rgba(2, 100, 38, 0.25),
+        inset 0 -3px 0 rgba(0, 0, 0, 0.12);
+      animation: cta-pulse-soft 2.4s ease-in-out infinite;
+    }
+    .support-cta .line-button__main {
+      font-size: 19px;
+    }
+
+    /* 最終 CTA = SAMPLE 6（後光＋シャイン＋無料スタンプ＋浮遊） */
+    .closing-cta {
+      text-align: center;
+      animation: cta-float 3.2s ease-in-out infinite;
+    }
+    .closing-cta__halo {
+      position: relative;
+      display: inline-block;
+      width: 84%;
+      max-width: 320px;
+    }
+    .closing-cta__halo::before,
+    .closing-cta__halo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      background: rgba(6, 199, 85, 0.4);
+      animation: cta-halo-pulse 2s ease-out infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .closing-cta__halo::after {
+      animation-delay: 1s;
+    }
+    .closing-cta .line-button {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      width: 100%;
+      background: linear-gradient(180deg, #14d966, var(--line) 60%, #04a346);
+      border: 3px solid #ffffff;
+      box-shadow:
+        0 14px 32px rgba(6, 199, 85, 0.45),
+        0 4px 0 rgba(2, 100, 38, 0.22);
+    }
+    .closing-cta .line-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -120%;
+      width: 50%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+      transform: skewX(-20deg);
+      animation: cta-shine 2.6s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .closing-cta .line-button__copy,
+    .closing-cta .line-button__arrow {
+      position: relative;
+      z-index: 1;
+    }
+
     @media (min-width: 720px) {
       .page {
         padding-top: 24px;
@@ -629,8 +766,9 @@
   <div class="page">
     <main class="lp-frame" aria-label="看護師REACHのランディングページ">
       <section class="hero-section" aria-label="ファーストビュー">
-        <img class="section-image" src="看護師リーチ最新/01-first-view.png" alt="看護師REACH ファーストビュー">
+        <img class="section-image" src="看護師リーチ最新/01-first-view2.png" alt="看護師REACH ファーストビュー">
         <div class="hero-cta">
+          <span class="cta-stamp" aria-hidden="true"><small>完全</small><strong>無料</strong></span>
           <a class="line-button" href="https://line.me/R/ti/p/@023mgjip" target="_blank" rel="noopener">
             <span class="line-button__copy">
               <span class="line-button__sub">30秒でかんたん相談</span>
@@ -642,7 +780,7 @@
       </section>
 
       <section aria-label="お客様の声">
-        <img class="section-image" src="看護師リーチ最新/02-voices-showcase.png" alt="看護師REACH お客様の声">
+        <img class="section-image" src="看護師リーチ最新/02-voices-showcase2.png" alt="看護師REACH お客様の声">
       </section>
 
       <section aria-label="看護師リーチが選ばれる理由">
@@ -687,13 +825,16 @@
           <li>しつこい連絡なし</li>
         </ul>
         <div class="closing-cta">
-          <a class="line-button" href="https://line.me/R/ti/p/@023mgjip" target="_blank" rel="noopener">
-            <span class="line-button__copy">
-              <span class="line-button__sub">30秒でかんたん相談</span>
-              <span class="line-button__main">LINEで無料相談する</span>
-            </span>
-            <span class="line-button__arrow" aria-hidden="true">›</span>
-          </a>
+          <span class="closing-cta__halo">
+            <span class="cta-stamp" aria-hidden="true"><small>完全</small><strong>無料</strong></span>
+            <a class="line-button" href="https://line.me/R/ti/p/@023mgjip" target="_blank" rel="noopener">
+              <span class="line-button__copy">
+                <span class="line-button__sub">30秒でかんたん相談</span>
+                <span class="line-button__main">LINEで無料相談する</span>
+              </span>
+              <span class="line-button__arrow" aria-hidden="true">›</span>
+            </a>
+          </span>
         </div>
       </section>
 
