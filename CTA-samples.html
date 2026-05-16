@@ -264,20 +264,19 @@
     }
     .cta-5-stamp {
       position: absolute;
-      top: -12px;
-      right: -10px;
+      top: -14px;
+      right: -8px;
       z-index: 2;
-      display: grid;
-      place-items: center;
-      width: 52px;
-      height: 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
       border-radius: 999px;
       background: var(--coral);
       color: #ffffff;
-      font-size: 13px;
-      font-weight: 900;
       text-align: center;
-      line-height: 1.1;
       transform: rotate(-12deg);
       box-shadow:
         0 0 0 3px #ffffff,
@@ -286,8 +285,17 @@
     .cta-5-stamp small {
       display: block;
       font-size: 9px;
-      margin-top: 1px;
       font-weight: 800;
+      letter-spacing: 0.05em;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .cta-5-stamp strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1;
     }
     .cta-5 {
       background: linear-gradient(180deg, #14d966, var(--line) 60%, var(--line-deep));
@@ -337,28 +345,36 @@
     }
     .cta-6-stamp {
       position: absolute;
-      top: -12px;
-      right: -10px;
+      top: -14px;
+      right: -8px;
       z-index: 2;
-      display: grid;
-      place-items: center;
-      width: 52px;
-      height: 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
       border-radius: 999px;
       background: var(--coral);
       color: #ffffff;
-      font-size: 13px;
-      font-weight: 900;
       text-align: center;
-      line-height: 1.1;
       transform: rotate(-12deg);
       box-shadow: 0 0 0 3px #ffffff, 0 8px 18px rgba(238, 110, 133, 0.45);
     }
     .cta-6-stamp small {
       display: block;
       font-size: 9px;
-      margin-top: 1px;
       font-weight: 800;
+      letter-spacing: 0.05em;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .cta-6-stamp strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1;
     }
 
     /* 現状（リファレンス） */
@@ -482,7 +498,7 @@
       <p class="sample__desc">右上にコーラルの無料バッジが斜めにペタリ。ボタン全体がゆっくり上下に浮遊。心理的ハードルを下げる効果◎</p>
       <div class="stage">
         <span class="cta-5-wrap">
-          <span class="cta-5-stamp">完全<small>無料</small></span>
+          <span class="cta-5-stamp"><small>完全</small><strong>無料</strong></span>
           <a class="line-button cta-5" href="#">
             <span class="line-button__copy">
               <span class="line-button__sub">30秒でかんたん相談</span>
@@ -501,7 +517,7 @@
       <p class="sample__desc">最大限目立たせる版。最終CTA1箇所だけに使うのもアリ。やや派手なので使い所は要相談。</p>
       <div class="stage">
         <span class="cta-6-wrap">
-          <span class="cta-6-stamp">完全<small>無料</small></span>
+          <span class="cta-6-stamp"><small>完全</small><strong>無料</strong></span>
           <a class="line-button cta-6" href="#">
             <span class="line-button__copy">
               <span class="line-button__sub">30秒でかんたん相談</span>
