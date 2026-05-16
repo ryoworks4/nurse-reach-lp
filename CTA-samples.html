@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>看護師REACH CTAサンプル比較</title>
+  <style>
+    :root {
+      --coral: #ee6e85;
+      --coral-deep: #de5872;
+      --blue: #cde3ee;
+      --cream: #faf9f5;
+      --pink-soft: #fce4e4;
+      --line: #06c755;
+      --line-deep: #04a346;
+      --text: #333333;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 24px 12px 60px;
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(205, 227, 238, 0.45), transparent 30rem),
+        radial-gradient(circle at bottom right, rgba(252, 228, 228, 0.6), transparent 30rem),
+        #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 0 auto 8px;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      gap: 36px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 720px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .sample {
+      padding: 28px 18px 32px;
+      border-radius: 22px;
+      background: #ffffff;
+      box-shadow: 0 14px 32px rgba(238, 110, 133, 0.1);
+    }
+
+    .sample__no {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--coral);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+
+    .sample__title {
+      margin: 10px 0 6px;
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .sample__desc {
+      margin: 0 0 22px;
+      color: #666;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .stage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 140px;
+      padding: 18px 14px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #ffffff, #fff8f4);
+    }
+
+    /* ===== ベースのlineボタン（現状） ===== */
+    .line-button {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 340px;
+      min-height: 64px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      color: #ffffff;
+      font-weight: 900;
+      background: var(--line);
+      box-shadow: 0 10px 24px rgba(6, 199, 85, 0.34);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .line-button__copy {
+      display: grid;
+      gap: 2px;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .line-button__sub {
+      font-size: 12px;
+      font-weight: 700;
+      opacity: 0.95;
+    }
+
+    .line-button__main {
+      font-size: 18px;
+    }
+
+    .line-button__arrow {
+      margin-left: 12px;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    /* ===== サンプル1：基本強化（拡大＋強影＋微パルス）===== */
+    .cta-1 {
+      min-height: 72px;
+      background: linear-gradient(180deg, #14d966, var(--line) 60%, var(--line-deep));
+      box-shadow:
+        0 14px 32px rgba(6, 199, 85, 0.45),
+        0 4px 0 rgba(2, 100, 38, 0.25),
+        inset 0 -3px 0 rgba(0, 0, 0, 0.12);
+      animation: pulse-soft 2.4s ease-in-out infinite;
+    }
+    .cta-1 .line-button__main { font-size: 19px; }
+
+    @keyframes pulse-soft {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-2px) scale(1.02); }
+    }
+
+    /* ===== サンプル2：後光リング（ハロー） ===== */
+    .cta-2-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .cta-2-wrap::before,
+    .cta-2-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      background: rgba(6, 199, 85, 0.45);
+      animation: halo 2s ease-out infinite;
+      z-index: 0;
+    }
+    .cta-2-wrap::after { animation-delay: 1s; }
+    .cta-2 { position: relative; z-index: 1; }
+
+    @keyframes halo {
+      0%   { transform: scale(1);    opacity: 0.55; }
+      80%  { transform: scale(1.18); opacity: 0; }
+      100% { transform: scale(1.18); opacity: 0; }
+    }
+
+    /* ===== サンプル3：光の帯がスライド（シャイン） ===== */
+    .cta-3 {
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, #14d966, var(--line) 60%, var(--line-deep));
+      box-shadow:
+        0 14px 30px rgba(6, 199, 85, 0.4),
+        0 4px 0 rgba(2, 100, 38, 0.22);
+    }
+    .cta-3::before {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0;
+      left: -120%;
+      width: 50%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+      transform: skewX(-20deg);
+      animation: shine 2.6s ease-in-out infinite;
+    }
+
+    @keyframes shine {
+      0%   { left: -120%; }
+      45%  { left: 130%; }
+      100% { left: 130%; }
+    }
+
+    /* ===== サンプル4：吹き出し誘導＋バウンス ===== */
+    .cta-4-wrap {
+      position: relative;
+      display: inline-block;
+      padding-top: 28px;
+    }
+    .cta-4-bubble {
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 6px 14px;
+      background: var(--coral);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 900;
+      border-radius: 999px;
+      white-space: nowrap;
+      box-shadow: 0 6px 14px rgba(238, 110, 133, 0.35);
+      animation: bubble-bounce 1.4s ease-in-out infinite;
+    }
+    .cta-4-bubble::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -6px;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: var(--coral);
+      border-bottom: 0;
+    }
+    @keyframes bubble-bounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50%      { transform: translate(-50%, 4px); }
+    }
+
+    .cta-4 {
+      background: linear-gradient(180deg, #14d966, var(--line) 60%, var(--line-deep));
+      box-shadow:
+        0 14px 32px rgba(6, 199, 85, 0.42),
+        0 4px 0 rgba(2, 100, 38, 0.22);
+    }
+
+    /* ===== サンプル5：右上「無料」スタンプ＋ふわっと浮く ===== */
+    .cta-5-wrap {
+      position: relative;
+      display: inline-block;
+      animation: float 3.2s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-4px); }
+    }
+    .cta-5-stamp {
+      position: absolute;
+      top: -12px;
+      right: -10px;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      background: var(--coral);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.1;
+      transform: rotate(-12deg);
+      box-shadow:
+        0 0 0 3px #ffffff,
+        0 8px 18px rgba(238, 110, 133, 0.45);
+    }
+    .cta-5-stamp small {
+      display: block;
+      font-size: 9px;
+      margin-top: 1px;
+      font-weight: 800;
+    }
+    .cta-5 {
+      background: linear-gradient(180deg, #14d966, var(--line) 60%, var(--line-deep));
+      border: 3px solid #ffffff;
+      box-shadow:
+        0 14px 32px rgba(6, 199, 85, 0.42),
+        0 4px 0 rgba(2, 100, 38, 0.2);
+    }
+
+    /* ===== サンプル6：複合（後光＋シャイン＋無料スタンプ） ===== */
+    .cta-6-wrap {
+      position: relative;
+      display: inline-block;
+      animation: float 3.2s ease-in-out infinite;
+    }
+    .cta-6-wrap::before,
+    .cta-6-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      background: rgba(6, 199, 85, 0.4);
+      animation: halo 2s ease-out infinite;
+      z-index: 0;
+    }
+    .cta-6-wrap::after { animation-delay: 1s; }
+
+    .cta-6 {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      background: linear-gradient(180deg, #14d966, var(--line) 60%, var(--line-deep));
+      border: 3px solid #ffffff;
+      box-shadow:
+        0 14px 32px rgba(6, 199, 85, 0.45),
+        0 4px 0 rgba(2, 100, 38, 0.22);
+    }
+    .cta-6::before {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0;
+      left: -120%;
+      width: 50%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+      transform: skewX(-20deg);
+      animation: shine 2.6s ease-in-out infinite;
+    }
+    .cta-6-stamp {
+      position: absolute;
+      top: -12px;
+      right: -10px;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      background: var(--coral);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.1;
+      transform: rotate(-12deg);
+      box-shadow: 0 0 0 3px #ffffff, 0 8px 18px rgba(238, 110, 133, 0.45);
+    }
+    .cta-6-stamp small {
+      display: block;
+      font-size: 9px;
+      margin-top: 1px;
+      font-weight: 800;
+    }
+
+    /* 現状（リファレンス） */
+    .cta-current {
+      background: var(--line);
+      box-shadow: 0 10px 24px rgba(6, 199, 85, 0.34);
+    }
+
+    .note {
+      max-width: 720px;
+      margin: 36px auto 0;
+      padding: 18px;
+      background: #fff;
+      border-radius: 14px;
+      border-left: 4px solid var(--coral);
+      font-size: 13px;
+      line-height: 1.8;
+      color: #555;
+    }
+    .note strong { color: var(--coral-deep); }
+  </style>
+</head>
+<body>
+  <h1>看護師REACH ／ CTAボタン サンプル比較</h1>
+  <p class="lead">
+    既存デザインの世界観・配色は保ったまま、CTAだけを目立たせる5パターン＋複合1案。<br>
+    ブラウザで開いてアニメーションをご確認ください。
+  </p>
+
+  <div class="grid">
+
+    <!-- リファレンス（現状） -->
+    <div class="sample">
+      <span class="sample__no">REF</span>
+      <h2 class="sample__title">現状（リファレンス）</h2>
+      <p class="sample__desc">いま使用中のCTA。サイズ・色は基準。</p>
+      <div class="stage">
+        <a class="line-button cta-current" href="#">
+          <span class="line-button__copy">
+            <span class="line-button__sub">30秒でかんたん相談</span>
+            <span class="line-button__main">LINEで無料相談する</span>
+          </span>
+          <span class="line-button__arrow">›</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 1. 基本強化 -->
+    <div class="sample">
+      <span class="sample__no">SAMPLE 1</span>
+      <h2 class="sample__title">基本強化（拡大＋立体＋微パルス）</h2>
+      <p class="sample__desc">高さ・影・グラデで立体感UP。ゆっくり脈打つ程度の控えめアニメ。デザインへの影響最小。</p>
+      <div class="stage">
+        <a class="line-button cta-1" href="#">
+          <span class="line-button__copy">
+            <span class="line-button__sub">30秒でかんたん相談</span>
+            <span class="line-button__main">LINEで無料相談する</span>
+          </span>
+          <span class="line-button__arrow">›</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. 後光リング -->
+    <div class="sample">
+      <span class="sample__no">SAMPLE 2</span>
+      <h2 class="sample__title">後光リング（ハロー）</h2>
+      <p class="sample__desc">ボタンの外側に緑のリングが波紋のように広がる。「ここタップして」の視線誘導効果。</p>
+      <div class="stage">
+        <span class="cta-2-wrap">
+          <a class="line-button cta-2" href="#">
+            <span class="line-button__copy">
+              <span class="line-button__sub">30秒でかんたん相談</span>
+              <span class="line-button__main">LINEで無料相談する</span>
+            </span>
+            <span class="line-button__arrow">›</span>
+          </a>
+        </span>
+      </div>
+    </div>
+
+    <!-- 3. 光の帯がスライド -->
+    <div class="sample">
+      <span class="sample__no">SAMPLE 3</span>
+      <h2 class="sample__title">光の帯がスライド（シャイン）</h2>
+      <p class="sample__desc">ボタン表面を白い光が斜めに走るアニメ。"ピカッ"と一瞬光って高級感も出る。</p>
+      <div class="stage">
+        <a class="line-button cta-3" href="#">
+          <span class="line-button__copy">
+            <span class="line-button__sub">30秒でかんたん相談</span>
+            <span class="line-button__main">LINEで無料相談する</span>
+          </span>
+          <span class="line-button__arrow">›</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 4. 吹き出し誘導 -->
+    <div class="sample">
+      <span class="sample__no">SAMPLE 4</span>
+      <h2 class="sample__title">吹き出し誘導</h2>
+      <p class="sample__desc">ボタンの上にコーラル色の吹き出し「\ ここから！ /」がふわっと上下。視線を強制誘導。</p>
+      <div class="stage">
+        <span class="cta-4-wrap">
+          <span class="cta-4-bubble">＼ ここからどうぞ ／</span>
+          <a class="line-button cta-4" href="#">
+            <span class="line-button__copy">
+              <span class="line-button__sub">30秒でかんたん相談</span>
+              <span class="line-button__main">LINEで無料相談する</span>
+            </span>
+            <span class="line-button__arrow">›</span>
+          </a>
+        </span>
+      </div>
+    </div>
+
+    <!-- 5. 無料スタンプ＋浮遊 -->
+    <div class="sample">
+      <span class="sample__no">SAMPLE 5</span>
+      <h2 class="sample__title">「無料」スタンプ＋ふわっと浮遊</h2>
+      <p class="sample__desc">右上にコーラルの無料バッジが斜めにペタリ。ボタン全体がゆっくり上下に浮遊。心理的ハードルを下げる効果◎</p>
+      <div class="stage">
+        <span class="cta-5-wrap">
+          <span class="cta-5-stamp">完全<small>無料</small></span>
+          <a class="line-button cta-5" href="#">
+            <span class="line-button__copy">
+              <span class="line-button__sub">30秒でかんたん相談</span>
+              <span class="line-button__main">LINEで無料相談する</span>
+            </span>
+            <span class="line-button__arrow">›</span>
+          </a>
+        </span>
+      </div>
+    </div>
+
+    <!-- 6. 複合（一押し） -->
+    <div class="sample">
+      <span class="sample__no">SAMPLE 6 / 複合</span>
+      <h2 class="sample__title">複合：後光＋光の帯＋無料スタンプ＋浮遊（最も目立つ）</h2>
+      <p class="sample__desc">最大限目立たせる版。最終CTA1箇所だけに使うのもアリ。やや派手なので使い所は要相談。</p>
+      <div class="stage">
+        <span class="cta-6-wrap">
+          <span class="cta-6-stamp">完全<small>無料</small></span>
+          <a class="line-button cta-6" href="#">
+            <span class="line-button__copy">
+              <span class="line-button__sub">30秒でかんたん相談</span>
+              <span class="line-button__main">LINEで無料相談する</span>
+            </span>
+            <span class="line-button__arrow">›</span>
+          </a>
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <strong>使い分けのおすすめ：</strong>
+    全CTAに同じ強さを当てると「うるさい」印象になります。
+    たとえば <strong>FV＝SAMPLE 5</strong>（無料スタンプで一押し）、
+    <strong>中間CTA＝SAMPLE 1〜2</strong>（控えめに目立たせる）、
+    <strong>最終クロージング＝SAMPLE 6</strong>（最大強調）といった
+    "強弱の付け方"が読者の体感として自然です。
+  </div>
+
+</body>
+</html>
