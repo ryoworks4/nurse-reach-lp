@@ -36,3 +36,31 @@ desktop.ini
 
 # === Vercel ===
 .vercel
+# === クライアント案件内部資料（公開リポジトリには出さない）===
+# プロンプト md / 設計書 / 対応ログ
+画像v2/プロンプト-*.md
+DESIGN.md/
+LP構成案.md
+LP設計書.md
+UTM設計.md
+GPT用プロンプト.md
+画像生成プロンプト.md
+クライアント修正対応_*.md
+
+# 旧 HTML
+image-lp.html
+index-old.html
+
+# Claude Code 設定
+.claude/
+
+# 画像 v2 のソース・旧版（バナーに統合済みなので公開不要）
+画像v2/SEC1_new.png
+画像v2/05-pros-bg-v1.png
+画像v2/02-voice-as.png
+画像v2/03-voice-mk.png
+画像v2/04-voice-rt.png
+画像v2/04-voice-rt2.png
+画像v2/選ばれる理由１.png
+画像v2/選ばれる理由２.png
+画像v2/選ばれる理由３.png

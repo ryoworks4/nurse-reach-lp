@@ -382,10 +382,11 @@
       position: relative;
       z-index: 1;
       margin: 0 0 8px;
-      font-size: 22px;
+      font-size: 19px;
       font-weight: 900;
       line-height: 1.5;
-      letter-spacing: 0.01em;
+      letter-spacing: 0;
+      white-space: nowrap;
     }
 
     .closing-lead strong {
@@ -428,6 +429,125 @@
     .closing-cta {
       position: relative;
       z-index: 1;
+    }
+
+    .pros-section {
+      padding: 130px 14px 50px;
+      margin: 0;
+      background-image: url("画像v2/05-pros-bg-v2.png");
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: 100% auto;
+      background-color: #fce4e4;
+    }
+
+    .pros-scroller {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 4px 4px 14px;
+      margin: 0 -6px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .pros-scroller::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .pros-scroller::-webkit-scrollbar-thumb {
+      background: rgba(238, 110, 133, 0.4);
+      border-radius: 3px;
+    }
+
+    .pros-card {
+      flex: 0 0 auto;
+      width: 188px;
+      background: linear-gradient(165deg, #ffffff 0%, #fff4f5 100%);
+      border-radius: 14px;
+      box-shadow:
+        0 8px 18px rgba(238, 110, 133, 0.18),
+        0 2px 4px rgba(238, 110, 133, 0.08);
+      padding: 12px 12px 14px;
+      scroll-snap-align: start;
+      border: 1px solid rgba(238, 110, 133, 0.08);
+    }
+
+    .pros-card__photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 10px;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg, #f1f1f1 0%, #e2e2e2 100%);
+      color: #999999;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .pros-card__photo--missing {
+      position: relative;
+    }
+
+    .pros-card__photo--missing::after {
+      content: attr(data-placeholder);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pros-card__name {
+      font-size: 13px;
+      color: var(--coral);
+      margin: 0 0 6px;
+      font-weight: 500;
+    }
+
+    .pros-card__name strong {
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--coral);
+      margin-right: 2px;
+    }
+
+    .pros-card__meta {
+      margin: 0;
+      font-size: 11px;
+      color: #555555;
+      line-height: 1.5;
+    }
+
+    .pros-card__meta div {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 3px;
+    }
+
+    .pros-card__meta dt {
+      color: #888888;
+      flex: 0 0 auto;
+    }
+
+    .pros-card__meta dd {
+      margin: 0;
+      color: #333333;
+      font-weight: 700;
+    }
+
+    .pros-card__meta dd strong {
+      font-weight: 900;
+    }
+
+    .pros-scroll-hint {
+      text-align: center;
+      font-size: 11px;
+      color: #888888;
+      margin: 6px 0 0;
     }
 
     .faq-section {
@@ -555,6 +675,16 @@
       letter-spacing: 0.04em;
     }
 
+    .site-footer__nav {
+      margin: 6px 0 10px;
+      font-size: 12px;
+    }
+
+    .site-footer__nav a {
+      color: #555555;
+      text-decoration: underline;
+    }
+
     .site-footer__copy {
       margin: 0;
       color: #888888;
@@ -562,38 +692,6 @@
       letter-spacing: 0.04em;
     }
 
-    .lp-frame {
-      counter-reset: section;
-    }
-
-    .lp-frame > section,
-    .lp-frame > footer {
-      position: relative;
-      counter-increment: section;
-    }
-
-    .lp-frame > section::before,
-    .lp-frame > footer::before {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 5;
-      display: grid;
-      place-items: center;
-      min-width: 34px;
-      height: 34px;
-      padding: 0 8px;
-      border: 2px solid #ffffff;
-      border-radius: 999px;
-      color: #ffffff;
-      font-size: 15px;
-      font-weight: 900;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background: var(--coral);
-      box-shadow: 0 6px 14px rgba(238, 110, 133, 0.45);
-      content: "SEC " counter(section);
-      letter-spacing: 0.04em;
-    }
 
     /* === CTA enhancements ====================================== */
     @keyframes cta-pulse-soft {
@@ -766,7 +864,7 @@
   <div class="page">
     <main class="lp-frame" aria-label="看護師REACHのランディングページ">
       <section class="hero-section" aria-label="ファーストビュー">
-        <img class="section-image" src="看護師リーチ最新/01-first-view3.png" alt="看護師REACH ファーストビュー">
+        <img class="section-image" src="画像v2/SEC1_new_v2.png" alt="看護師REACH ファーストビュー">
         <div class="hero-cta">
           <span class="cta-stamp" aria-hidden="true"><small>完全</small><strong>無料</strong></span>
           <a class="line-button" href="https://line.me/R/ti/p/@023mgjip" target="_blank" rel="noopener">
@@ -780,19 +878,50 @@
       </section>
 
       <section aria-label="お客様の声">
-        <img class="section-image" src="看護師リーチ最新/02-voices-showcase2.png" alt="看護師REACH お客様の声">
+        <img class="section-image" src="画像v2/声-枠組み統合.png" alt="看護師REACH お客様の声 A.S様・M.K様・K.Y様">
       </section>
 
       <section aria-label="看護師リーチが選ばれる理由">
-        <img class="section-image" src="看護師リーチ最新/05-reasons-showcase-long-v3.png" alt="看護師REACHが選ばれる5つの理由">
-      </section>
-
-      <section aria-label="限定求人情報">
-        <img class="section-image" src="看護師リーチ最新/10-2-jobs-showcase.png" alt="看護師REACH 限定求人情報">
+        <img class="section-image" src="画像v2/選ばれる理由-枠組み統合.png" alt="看護師REACHが選ばれる3つの理由：非公開求人 / 専属担当がフルサポート / 5年後を一緒に考える">
       </section>
 
       <section aria-label="お悩みセクション">
         <img class="section-image" src="看護師リーチ最新/13-worries.png" alt="ひとりで抱えてませんか">
+      </section>
+
+      <section class="pros-section" aria-label="厳しい審査をクリアしたプロが所属">
+        <h2 class="sr-only">厳しい審査をクリアしたプロが所属</h2>
+        <div class="pros-scroller" role="list">
+          <article class="pros-card" role="listitem">
+            <img class="pros-card__photo" src="画像v2/pro-1-suzuki.png" alt="鈴木様 元看護師 エージェント歴6年" loading="lazy" onerror="this.classList.add('pros-card__photo--missing');this.setAttribute('data-placeholder','PRO 1');">
+            <p class="pros-card__name"><strong>鈴木</strong>様</p>
+            <dl class="pros-card__meta">
+              <div><dt>経歴</dt><dd>元看護師</dd></div>
+              <div><dt>エージェント歴</dt><dd><strong>6年</strong></dd></div>
+            </dl>
+          </article>
+          <article class="pros-card" role="listitem">
+            <img class="pros-card__photo" src="画像v2/pro-2-tanifuji.png" alt="谷藤様 大手人材紹介会社 エージェント歴5年" loading="lazy" onerror="this.classList.add('pros-card__photo--missing');this.setAttribute('data-placeholder','PRO 2');">
+            <p class="pros-card__name"><strong>谷藤</strong>様</p>
+            <dl class="pros-card__meta">
+              <div><dt>経歴</dt><dd>大手人材紹介会社</dd></div>
+              <div><dt>エージェント歴</dt><dd><strong>5年</strong></dd></div>
+            </dl>
+          </article>
+          <article class="pros-card" role="listitem">
+            <img class="pros-card__photo" src="画像v2/pro-3-kato.png" alt="加藤様 会社経営5年" loading="lazy" onerror="this.classList.add('pros-card__photo--missing');this.setAttribute('data-placeholder','PRO 3');">
+            <p class="pros-card__name"><strong>加藤</strong>様</p>
+            <dl class="pros-card__meta">
+              <div><dt>経歴</dt><dd>会社経営</dd></div>
+              <div><dt>経営歴</dt><dd><strong>5年</strong></dd></div>
+            </dl>
+          </article>
+        </div>
+        <p class="pros-scroll-hint" aria-hidden="true">← スワイプで他のプロも見る →</p>
+      </section>
+
+      <section aria-label="限定求人情報">
+        <img class="section-image" src="看護師リーチ最新/10-2-jobs-showcase.png" alt="看護師REACH 限定求人情報">
       </section>
 
       <section class="support-section" aria-label="おまかせセクション">
@@ -809,7 +938,7 @@
       </section>
 
       <section aria-label="ご利用の流れ">
-        <img class="section-image" src="看護師リーチ最新/15.ご利用の流れ.png" alt="看護師REACH ご利用の流れ">
+        <img class="section-image" src="看護師リーチ最新/15.ご利用の流れ2.png" alt="看護師REACH ご利用の流れ">
       </section>
 
       <section aria-label="医療機関との取り組み">
@@ -863,6 +992,9 @@
 
       <footer class="site-footer" aria-label="フッター">
         <div class="site-footer__logo">看護師REACH</div>
+        <nav class="site-footer__nav" aria-label="サイトナビゲーション">
+          <a href="privacy.html">プライバシーポリシー</a>
+        </nav>
         <p class="site-footer__copy">© 2026 看護師REACH All Rights Reserved.</p>
       </footer>
     </main>
